@@ -20,4 +20,15 @@ toBeVisible()	verify visible
 toBeHidden()	verify hidden
 toBeChecked()	verify checkbox checked
 toBeEnabled()	verify enabled
-toBeDisabled()	verify disabled*/
+toBeDisabled()	verify disabled
+
+
+
+Hardcoded vs Flexible Validation
+
+await expect(page).toHaveTitle('Google');
+
+await expect(page).toHaveTitle(/Google/);
+
+*/
+

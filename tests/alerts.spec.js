@@ -54,14 +54,11 @@ test('Confirm JS alert dismiss', async ({ page }) => {
   await page.waitForTimeout(5000);
 });
 
-
 //////////////////////////
 
 test('prompt alert', async ({ page }) => {
 
-  await page.goto(
-   'https://the-internet.herokuapp.com/javascript_alerts'
-  );
+  await page.goto('https://the-internet.herokuapp.com/javascript_alerts');
 
   page.on('dialog', async dialog => {
 

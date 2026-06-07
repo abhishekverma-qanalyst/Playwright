@@ -4,9 +4,11 @@ test('dropdown practice', async ({ page }) => {
 
   await page.goto('https://the-internet.herokuapp.com/dropdown');
 
- // await page.selectOption('#dropdown', '1');
-  //more methods
-  //await page.selectOption('#dropdown', {label: 'Option 1'});
+  // await page.selectOption('#dropdown', '1');
+  // more methods
+  // await page.selectOption('#dropdown', {label: 'Option 1'});
+  // await page.selectOption('#country', {value: 'IN'});
+  // await page.selectOption('#skills', ['Java', 'Python']);
 
   await page.selectOption('#dropdown', {index: 1});
 

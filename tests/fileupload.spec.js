@@ -10,7 +10,7 @@ test('file upload practice', async ({ page }) => {
  
  //await page.setInputFiles('#upload', ['a.pdf', 'b.pdf']);  // upload multiple files
  
- //await page.setInputFiles('#upload', []);
+ //await page.setInputFiles('#upload', []);  // to remove uploaded file 
 
   await page.click('#file-submit');
 
@@ -19,4 +19,6 @@ test('file upload practice', async ({ page }) => {
   await page.waitForTimeout(5000);
 
 });
+
+//Playwright file upload is stable Because it bypasses native OS dialogs.
 

@@ -1,23 +1,19 @@
-import { test, expect } from '@playwright/test';
-import { analyzeFailure } from '../utils/openaiHelper.js';
+const { test, expect } = require('@playwright/test');
+const { analyzeFailure } = require('../utils/openaiHelper');
 
- const users = [
-
+const users = [
     {
         username: 'standard_user',
         password: 'secret_sauce'
     },
-
     {
         username: 'problem_user',
         password: 'secret_sauce'
     },
-
-     {
+    {
         username: 'Abhishek',
         password: 'secret_sauce78834873749'
     }
-
 ];
 
 users.forEach(data => {
@@ -38,10 +34,18 @@ users.forEach(data => {
 
         } catch (error) {
 
-            const aiResponse = await analyzeFailure(error.message);
+            console.log('\n===== ORIGINAL ERROR =====');
+            console.log(error.message);
 
-            console.log('\n===== AI ANALYSIS =====');
-            console.log(aiResponse);
+            try {
+                const aiResponse = await analyzeFailure(error.message);
+
+                console.log('\n===== AI ANALYSIS =====');
+                console.log(aiResponse);
+            } catch (aiError) {
+                console.log('\n===== AI ANALYSIS FAILED =====');
+                console.log(aiError.message);
+            }
 
             throw error;
         }
@@ -49,3 +53,7 @@ users.forEach(data => {
     });
 
 });
+
+
+
+
